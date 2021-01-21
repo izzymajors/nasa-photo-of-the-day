@@ -1,6 +1,6 @@
 import React, {useState , useEffect} from "react";
 import "./App.css";
-import {BASE_URL, DEMO_KEY} from '../Constants/constant';
+import {BASE_URL, DEMO_KEY} from './constant.Js';
  //import Details from './Details';
  import axios from 'axios';
 
