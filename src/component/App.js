@@ -1,16 +1,22 @@
 import React, {useState , useEffect} from "react";
 import "./App.css";
-import {BASE_URL, DEMO_KEY} from './constant.Js';
- //import Details from './Details';
+import {BASE_URL , DEMO_KEY} from '.';
+
  import axios from 'axios';
 
 
 
 function App() {
-const [nasaData, setNasaData] = useState([]);
+ const [nasaData, setNasaData] = useState([]);
+ const [urlData , setUrlData] = useState();
+
+ const nasaUrl = url => {
+   setNasaData(url)
+ }
+
 
 useEffect(() =>{
-  axios.get(`${BASE_URL}?api_key=${DEMO_KEY}`)
+  axios.get(`${BASE_URL}/?api_key=${DEMO_KEY}`)
   .then((res) => {
     setNasaData(res.data)
   })
@@ -21,10 +27,11 @@ console.log('nasaData', nasaData);
 
   return (
   <div className="App">
-  <p>
-    Read through the instructions in the README.md file to build your NASA
-    app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-  </p>
+  <h1>
+   THis is working
+   
+  </h1>
+  
 </div>
 );
 }
