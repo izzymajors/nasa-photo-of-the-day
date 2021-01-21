@@ -1,16 +1,31 @@
-import React from "react";
+import React, {useState , useEffect} from "react";
 import "./App.css";
-import {BASE_URL, DEMO_KEY} from './constant.Js';
+ import {BASE_URL, DEMO_KEY} from './constant/constant';
+ //import Details from './component/Details';
+ //import axios from 'axios';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
-    </div>
-  );
+const [nasaData, setNasaData] = useState([]);
+
+useEffect(() =>{
+  axios.get(`${BASE_URL}?api_key= ${DEMO_KEY}`)
+  .then((res) => {
+    setNasaData(res.data)
+  })
+  .catch((err) =>console.log(err));
+}, [])
+
+
+
+  return (<div className="App">
+  <p>
+    Read through the instructions in the README.md file to build your NASA
+    app! Have fun <span role="img" aria-label='go!'>🚀</span>!
+  </p>
+</div>
+);
 }
 
 export default App;
