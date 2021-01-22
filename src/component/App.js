@@ -3,10 +3,10 @@ import "./App.css";
 import {BASE_URL , DEMO_KEY} from '.';
 
  import axios from 'axios';
+import {NasaImage} from './NasaImage';
 
 
-
-function App() {
+ function App() {
  const [nasaData, setNasaData] = useState([]);
  const [urlData , setUrlData] = useState();
 
