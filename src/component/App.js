@@ -1,12 +1,12 @@
+import {NasaImage} from './NasaImage';
 import React, {useState , useEffect} from "react";
-import "./App.css";
 import {BASE_URL , DEMO_KEY} from '.';
-
  import axios from 'axios';
+ import "./App.css";
 
+ 
 
-
-function App() {
+ function App() {
  const [nasaData, setNasaData] = useState([]);
  const [urlData , setUrlData] = useState();
 
@@ -28,10 +28,10 @@ console.log('nasaData', nasaData);
   return (
   <div className="App">
   <h1>
-   THis is working
+  This is the start of your own App that captures nasa photo of the day
    
   </h1>
-  
+  <NasaImage/>
 </div>
 );
 }
